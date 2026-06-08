@@ -1,0 +1,46 @@
+{
+  "name": "pulumi-stack-orchestrator",
+  "version": "0.1.0",
+  "description": "Typed TypeScript orchestration for running multiple Pulumi Automation API stacks up, down, preview, or refresh.",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=20.16.0"
+  },
+  "packageManager": "pnpm@10.7.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./pure": {
+      "types": "./dist/pure.d.ts",
+      "import": "./dist/pure.js"
+    },
+    "./run": {
+      "types": "./dist/run.d.ts",
+      "import": "./dist/run.js"
+    }
+  },
+  "peerDependencies": {
+    "@pulumi/pulumi": ">=3.144.0 <5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.7"
+  }
+}
