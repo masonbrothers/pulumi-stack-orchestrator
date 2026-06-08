@@ -23,9 +23,11 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: node -e 'const pkg = require("./package.json"); const tag = process.env.GITHUB_REF_NAME; const allowed = new Set([pkg.version, `v${pkg.version}`, `${pkg.name}@${pkg.version}`, `${pkg.name}-${pkg.version}`, `${pkg.name}-v${pkg.version}`]); if (!allowed.has(tag)) { console.error(`Release tag ${tag} does not match ${pkg.name} version ${pkg.version}`); process.exit(1); }'
       - run: pnpm typecheck
       - run: pnpm build
       - run: pnpm test
+      - run: pnpm test:pack
       - run: npm pack --dry-run
       - run: npm publish --provenance --access public
         env:

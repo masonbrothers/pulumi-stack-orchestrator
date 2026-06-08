@@ -4,6 +4,17 @@
   "description": "Typed TypeScript orchestration for running multiple Pulumi Automation API stacks up, down, preview, or refresh.",
   "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masonbrothers/pulumi-stack-orchestrator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/masonbrothers/pulumi-stack-orchestrator/issues"
+  },
+  "homepage": "https://github.com/masonbrothers/pulumi-stack-orchestrator#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=20.16.0"
   },
@@ -19,6 +30,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "vitest run",
+    "test:pack": "node test/pack-smoke.cjs",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit"
   },
   "exports": {
