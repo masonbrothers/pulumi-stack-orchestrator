@@ -3,7 +3,7 @@
 Typed TypeScript orchestration for running several Pulumi Automation API stacks
 as one deployment workflow.
 
-This is the cleaned-up version of the old ModelGo "split Pulumi into up/down
+This is the cleaned-up version of the old Objective Run "split Pulumi into up/down
 and multiple deploys" experiment. The useful idea is preserved: one TypeScript
 entrypoint can run a stack pipeline, pass outputs from one stack into the next,
 and repeat that pipeline across provider/region targets.
