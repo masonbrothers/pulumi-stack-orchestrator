@@ -52,8 +52,8 @@
     "@pulumi/pulumi": ">=3.144.0 <5"
   },
   "devDependencies": {
-    "@types/node": "^22.8.1",
-    "typescript": "^5.9.3",
-    "vitest": "^4.0.7"
+    "@types/node": "^26.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
   }
 }
